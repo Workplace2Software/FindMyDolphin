@@ -85,6 +85,7 @@ Partial Class Form2
         Me.coolBrowser.Location = New System.Drawing.Point(0, 0)
         Me.coolBrowser.MinimumSize = New System.Drawing.Size(20, 20)
         Me.coolBrowser.Name = "coolBrowser"
+        Me.coolBrowser.ScriptErrorsSuppressed = True
         Me.coolBrowser.ScrollBarsEnabled = False
         Me.coolBrowser.Size = New System.Drawing.Size(418, 330)
         Me.coolBrowser.TabIndex = 6

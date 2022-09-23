@@ -1,33 +1,32 @@
 ﻿Imports System.Runtime.InteropServices
 
 Public Class Form2
-    Dim blinkToggle As Boolean = True
-    Dim r As New System.Random
-    Dim placeurl As String
+    Private blinkToggle As Boolean = True
+    Private r As New System.Random
+    Private placeurl As String
 
     Private Function GetMap() As String
         Dim lat As Double = Math.Round((360 * r.NextDouble()) - 180, 4)
         Dim lon As Double = Math.Round((180 * r.NextDouble()) - 90, 4)
         Return "https://www.google.com/maps/place/" _
                                & Str(lat) & "+" & Str(lon) _
-                               & "/@" & Str(lat) & "," & Str(lon) '& ",12z"
+                               & "/@" & Str(lat) & "," & Str(lon) & ",12z"
     End Function
 
     Private Sub Form2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         placeurl = GetMap()
 
-        Dim instance As SHDocVw.WebBrowser = coolBrowser.ActiveXInstance
+        Dim instance As SHDocVw.WebBrowser = CType(
+            coolBrowser.ActiveXInstance, SHDocVw.WebBrowser
+        )
         AddHandler instance.NavigateError, AddressOf instance_NavigateError
 
         coolBrowser.Navigate(placeurl)
     End Sub
 
-    Private Sub instance_NavigateError( _
-        ByVal pDisp As Object, ByRef url As Object, ByRef frame As Object, _
-        ByRef statusCode As Object, ByRef cancel As Boolean _
-    )
+    Private Sub InvokeJimmy(ByVal errmsg As String)
         SplitContainer1.Panel2.Controls.Remove(coolBrowser)
-        coolBrowser.Dispose()
+        'coolBrowser.Dispose()
 
         'My.Computer.Audio.Play(My.Resources.ooo, AudioPlayMode.Background)
         DolphinImage.Visible = True
@@ -37,16 +36,43 @@ Public Class Form2
         WindowState = FormWindowState.Maximized
         MinimumSize = Size
 
-        Dim errpage As New MapErrorPage(placeurl, CInt(statusCode))
+        Dim errpage As New MapErrorPage(placeurl, errmsg)
+        errpage.Visible = True
         errpage.Dock = DockStyle.Fill
         SplitContainer1.Panel2.Controls.Add(errpage)
     End Sub
+
+    Private Sub instance_NavigateError( _
+        ByVal pDisp As Object, ByRef url As Object, ByRef frame As Object, _
+        ByRef statusCode As Object, ByRef cancel As Boolean _
+    )
+        InvokeJimmy("IE error: 0x" & Hex(CInt(statusCode)))
+    End Sub
+
+    Private WithEvents scriptWindow As HtmlWindow
 
     Private Sub WebBrowser_Navigated(
         ByVal sender As System.Object,
         ByVal e As System.Windows.Forms.WebBrowserNavigatedEventArgs
     ) Handles coolBrowser.Navigated
+        If (coolBrowser.Document Is Nothing) Then
+            InvokeJimmy("Internal error: document was nothing") : Exit Sub
+        End If
+        scriptWindow = coolBrowser.Document.Window
+    End Sub
 
+    Private Sub scriptWindow_Error(
+        ByVal sender As Object, ByVal e As HtmlElementErrorEventArgs
+    ) Handles scriptWindow.Error
+        e.Handled = True
+        InvokeJimmy("Script error: " & e.Description)
+    End Sub
+
+
+    Private Sub coolBrowser_DocumentCompleted(
+        ByVal sender As System.Object,
+        ByVal e As System.Windows.Forms.WebBrowserDocumentCompletedEventArgs
+    ) Handles coolBrowser.DocumentCompleted
         My.Computer.Audio.Play(My.Resources.ooo, AudioPlayMode.Background)
 
         DolphinImage.Visible = True
@@ -56,8 +82,6 @@ Public Class Form2
 
         WindowState = FormWindowState.Maximized
         MinimumSize = Size
-
-        RemoveHandler coolBrowser.Navigated, AddressOf WebBrowser_Navigated
     End Sub
 
     Private Sub BlinkTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BlinkTimer.Tick
@@ -76,4 +100,5 @@ Public Class Form2
         BlinkText.Text = "LOCATED DOLPHIN"
         BlinkTimer.Enabled = True
     End Sub
+
 End Class
