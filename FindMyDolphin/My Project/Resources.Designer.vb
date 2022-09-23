@@ -121,11 +121,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to .
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property poo() As String
+        Friend ReadOnly Property taras_zaluzhnyi_jkXaik_8HCA_unsplash() As System.Drawing.Bitmap
             Get
-                Return ResourceManager.GetString("poo", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("taras-zaluzhnyi-jkXaik_8HCA-unsplash", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         

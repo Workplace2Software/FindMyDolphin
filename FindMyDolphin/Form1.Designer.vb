@@ -97,7 +97,7 @@ Partial Class Form1
         Me.WebpageButton.Name = "WebpageButton"
         Me.WebpageButton.Size = New System.Drawing.Size(284, 22)
         Me.WebpageButton.TabIndex = 5
-        Me.WebpageButton.Text = "Get More Products from The Workplace"
+        Me.WebpageButton.Text = "Get More Products from Workplace2Software"
         Me.WebpageButton.UseVisualStyleBackColor = True
         '
         'Form1
@@ -115,6 +115,7 @@ Partial Class Form1
         Me.Controls.Add(Me.LocateButton)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.Text = "FindMyDolphin 6 Deluxe Server Edition"

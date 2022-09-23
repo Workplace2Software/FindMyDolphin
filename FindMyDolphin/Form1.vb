@@ -18,7 +18,6 @@
         Dim stepp As Integer = 0
         Dim bye As Boolean = False
 
-        ProgressBar.Visible = True
 
         Do
             stepp = r.Next(1, 7)
@@ -33,6 +32,7 @@
             Wait(waittime)
 
             If bye Then Exit Do
+        ProgressBar.Visible = True
         Loop
 
         ProgressBar.Visible = False
@@ -51,21 +51,28 @@
         ByVal sender As Object, ByVal e As EventArgs
     )
         Select Case cantfindctr
-            Case 1 To 3
+            Case 1
                 MessageBox.Show(
                     "Please try again later.",
                     "Try again later",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
                 )
-            Case 4
+            Case 2
                 MessageBox.Show(
-                    "Wow, are you braindead? I said ""try again *later*"".",
-                    "Try again **later**. As in not now.",
+                    "Please try again later. As in, not now. But later.",
+                    "Try again *later*",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
+                    MessageBoxIcon.Warning
                 )
-            Case 5
+            Case 3
+                MessageBox.Show(
+                    "You need to wait before trying again; that is, you need to try again later.",
+                    "Try again LATER!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                )
+            Case 4
                 LocateButton.Enabled = False
                 MessageBox.Show(
                     "There's no help for people like you."
@@ -219,7 +226,7 @@
     End Sub
 
     Private Sub WebpageButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles WebpageButton.Click
-        Process.Start("iexplore", "http://theworkplace.tk")
+        Process.Start("iexplore", "http://www.theworkplace.tk")
     End Sub
 
     Private Sub AboutButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutButton.Click

@@ -28,7 +28,7 @@ Partial Class Form2
         Me.BlinkTimer = New System.Windows.Forms.Timer(Me.components)
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.DolphinImage = New System.Windows.Forms.Panel()
-        Me.WebBrowser = New System.Windows.Forms.WebBrowser()
+        Me.coolBrowser = New System.Windows.Forms.WebBrowser()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -63,9 +63,9 @@ Partial Class Form2
         '
         'SplitContainer1.Panel2
         '
-        Me.SplitContainer1.Panel2.Controls.Add(Me.WebBrowser)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.coolBrowser)
         Me.SplitContainer1.Size = New System.Drawing.Size(551, 330)
-        Me.SplitContainer1.SplitterDistance = 183
+        Me.SplitContainer1.SplitterDistance = 129
         Me.SplitContainer1.TabIndex = 1
         '
         'DolphinImage
@@ -75,20 +75,20 @@ Partial Class Form2
         Me.DolphinImage.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DolphinImage.Location = New System.Drawing.Point(0, 0)
         Me.DolphinImage.Name = "DolphinImage"
-        Me.DolphinImage.Size = New System.Drawing.Size(183, 330)
+        Me.DolphinImage.Size = New System.Drawing.Size(129, 330)
         Me.DolphinImage.TabIndex = 6
         Me.DolphinImage.Visible = False
         '
-        'WebBrowser
+        'coolBrowser
         '
-        Me.WebBrowser.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WebBrowser.Location = New System.Drawing.Point(0, 0)
-        Me.WebBrowser.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser.Name = "WebBrowser"
-        Me.WebBrowser.ScrollBarsEnabled = False
-        Me.WebBrowser.Size = New System.Drawing.Size(364, 330)
-        Me.WebBrowser.TabIndex = 6
-        Me.WebBrowser.Visible = False
+        Me.coolBrowser.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.coolBrowser.Location = New System.Drawing.Point(0, 0)
+        Me.coolBrowser.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.coolBrowser.Name = "coolBrowser"
+        Me.coolBrowser.ScrollBarsEnabled = False
+        Me.coolBrowser.Size = New System.Drawing.Size(418, 330)
+        Me.coolBrowser.TabIndex = 6
+        Me.coolBrowser.Visible = False
         '
         'Form2
         '
@@ -99,6 +99,7 @@ Partial Class Form2
         Me.Controls.Add(Me.BlinkText)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "Form2"
         Me.Text = "Form2"
         Me.SplitContainer1.Panel1.ResumeLayout(False)
@@ -112,5 +113,5 @@ Partial Class Form2
     Friend WithEvents BlinkTimer As System.Windows.Forms.Timer
     Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
     Friend WithEvents DolphinImage As System.Windows.Forms.Panel
-    Friend WithEvents WebBrowser As System.Windows.Forms.WebBrowser
+    Friend WithEvents coolBrowser As System.Windows.Forms.WebBrowser
 End Class
