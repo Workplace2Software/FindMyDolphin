@@ -26,9 +26,8 @@ Public Class Form2
 
     Private Sub InvokeJimmy(ByVal errmsg As String)
         SplitContainer1.Panel2.Controls.Remove(coolBrowser)
-        'coolBrowser.Dispose()
+        coolBrowser.Dispose()
 
-        'My.Computer.Audio.Play(My.Resources.ooo, AudioPlayMode.Background)
         DolphinImage.Visible = True
 
         EnableBlinkText()
