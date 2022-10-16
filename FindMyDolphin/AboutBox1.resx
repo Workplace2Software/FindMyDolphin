@@ -118,18 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="TextBoxDescription.Text" xml:space="preserve">
-    <value>A Program to Help you Find your Dolphin..... now Where did that Rascal Get Off To, Anyway
+    <value>A Program to Help you Find your Dolphin..... now Where did that Rascal Get Off To, Anyway?
+
+ATTENTION: This Program Is Known to Use Certain Works Under Creative Commons..... License
+Your Call Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0
+http://creativecommons.org/licenses/by/4.0
+
+WARNING: This computer program is protected by copyright law and international treaties. Unauthorized reproduction or distribution of this program, or any portion of it, may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under the law.
 
 Credits:
 Programming - Peter Workplace
 Icon - Susan Workplace
-
-WARNING: This computer program is protected by copyright law and international treaties. Unauthorized reproduction or distribution of this program, or any portion of it, may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under the law.
-
-ATTENTION: This Program Is Known to Use Certain Works Under Creative Commons..... License
-
-Your Call Kevin MacLeod (incompetech.com)
-Licensed under Creative Commons: By Attribution 3.0 License
-http://creativecommons.org/licenses/by/3.0/</value>
+</value>
   </data>
 </root>

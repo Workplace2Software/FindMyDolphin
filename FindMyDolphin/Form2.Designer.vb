@@ -28,6 +28,7 @@ Partial Class Form2
         Me.BlinkTimer = New System.Windows.Forms.Timer(Me.components)
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.DolphinImage = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.coolBrowser = New System.Windows.Forms.WebBrowser()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -63,6 +64,7 @@ Partial Class Form2
         '
         'SplitContainer1.Panel2
         '
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Button1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.coolBrowser)
         Me.SplitContainer1.Size = New System.Drawing.Size(551, 330)
         Me.SplitContainer1.SplitterDistance = 129
@@ -78,6 +80,15 @@ Partial Class Form2
         Me.DolphinImage.Size = New System.Drawing.Size(129, 330)
         Me.DolphinImage.TabIndex = 6
         Me.DolphinImage.Visible = False
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(144, 304)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(271, 23)
+        Me.Button1.TabIndex = 7
+        Me.Button1.Text = "View Dolphin's Location Externally if It Didn't Work :("
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'coolBrowser
         '
@@ -115,4 +126,5 @@ Partial Class Form2
     Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
     Friend WithEvents DolphinImage As System.Windows.Forms.Panel
     Friend WithEvents coolBrowser As System.Windows.Forms.WebBrowser
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

@@ -35,7 +35,7 @@ Public Class Form2
         WindowState = FormWindowState.Maximized
         MinimumSize = Size
 
-        Dim errpage As New MapErrorPage(placeurl, errmsg)
+        Dim errpage As New MapErrorPage(errmsg)
         errpage.Visible = True
         errpage.Dock = DockStyle.Fill
         SplitContainer1.Panel2.Controls.Add(errpage)
@@ -100,4 +100,7 @@ Public Class Form2
         BlinkTimer.Enabled = True
     End Sub
 
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Process.Start(placeurl)
+    End Sub
 End Class
