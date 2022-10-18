@@ -87,7 +87,7 @@ Partial Class Form1
         Me.AboutButton.Name = "AboutButton"
         Me.AboutButton.Size = New System.Drawing.Size(147, 22)
         Me.AboutButton.TabIndex = 4
-        Me.AboutButton.Text = "About This Softwares"
+        Me.AboutButton.Text = "About This Softwares..."
         Me.AboutButton.UseVisualStyleBackColor = True
         '
         'WebpageButton
@@ -97,7 +97,7 @@ Partial Class Form1
         Me.WebpageButton.Name = "WebpageButton"
         Me.WebpageButton.Size = New System.Drawing.Size(284, 22)
         Me.WebpageButton.TabIndex = 5
-        Me.WebpageButton.Text = "Get More Products from Workplace2Software"
+        Me.WebpageButton.Text = "Get More Products from Workplace2Software..."
         Me.WebpageButton.UseVisualStyleBackColor = True
         '
         'Form1

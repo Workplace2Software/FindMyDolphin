@@ -30,6 +30,7 @@ Partial Class Form2
         Me.DolphinImage = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.coolBrowser = New System.Windows.Forms.WebBrowser()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -83,11 +84,13 @@ Partial Class Form2
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(144, 304)
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.Location = New System.Drawing.Point(327, 304)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(271, 23)
+        Me.Button1.Size = New System.Drawing.Size(88, 23)
         Me.Button1.TabIndex = 7
-        Me.Button1.Text = "View Dolphin's Location Externally if It Didn't Work :("
+        Me.Button1.Text = "View externaly"
+        Me.ToolTip1.SetToolTip(Me.Button1, "FOR EmERGENCIES ONLY!")
         Me.Button1.UseVisualStyleBackColor = True
         '
         'coolBrowser
@@ -127,4 +130,5 @@ Partial Class Form2
     Friend WithEvents DolphinImage As System.Windows.Forms.Panel
     Friend WithEvents coolBrowser As System.Windows.Forms.WebBrowser
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
 End Class

@@ -101,6 +101,15 @@ Public Class Form2
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Process.Start(placeurl)
+        Dim retval As Integer
+        retval = MessageBox.Show( _
+            "WARNING: This option should only be used if Revolutionary Browsing Technology has Catastrophically Failed." & _
+            vbCrLf & "Locating your dolphin in an External Bowser could result in a DEGRADED EXPERIENCE!" & _
+            vbCrLf & vbCrLf & "Cancel this operation?",
+            "Are you sure?",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Warning
+        )
+        If retval = DialogResult.No Then Process.Start(placeurl)
     End Sub
 End Class
